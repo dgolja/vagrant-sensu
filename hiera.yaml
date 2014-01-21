@@ -1,8 +1,7 @@
 :backends:
   - yaml
 :yaml:
-  :datadir: /vagrant/hiera/common.yaml
+  :datadir: /vagrant/hiera/
 :hierarchy:
   - common
-  - wpdev
   - customize

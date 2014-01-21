@@ -14,10 +14,3 @@ rabbitmq::sensu_user_permissions: '/sensu@/sensu'
 sensu::client_ssl_cert_chain: '/etc/ssl/sensu/client/cert.pem'
 sensu::client_ssl_private_key: '/etc/ssl/sensu/client/key.pem'
 
-
-
-# increase/remove that for production environment
-mysql::server::override_options: { mysqld: { max_connections: '40' } }
-# only True if you are installing apache+php
-mysql::bindings::php_enable: 'True'
-

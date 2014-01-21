@@ -12,22 +12,22 @@ This vagrant configuration will boot up a working [Sensu](https://github.com/sen
 
 ## Installation
 
-Clone repository
-
-```$ git clone https://github.com/n1tr0g/vagrant-sensu.git```
-
-Start image
-
-```vagrant up```
+Boot image
+<pre> 
+$ git clone https://github.com/n1tr0g/vagrant-sensu.git
+$ cd vagrant-sensu
+$ vagrant up
+</pre>
 
 Start the services you need
 
-```$ vagrant ssh
+<pre>
+$ vagrant ssh
 $ service sensu-server start
 $ servic sensu-api start
 $ service sensu-dashboard start
 $ service sensu-client start
-```
+</pre>
 
 For example to access the sensu dashboard type http://localhost:8080/
 
