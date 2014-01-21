@@ -8,7 +8,7 @@ rabbitmq::sensu_user: 'sensu'
 # you should at least change that
 rabbitmq::sensu_pass: 'mypass'
 rabbitmq::sensu_vhost: '/sensu'
-rabbitmq::sensu_user_permissions: '/sensu@/sensu'
+rabbitmq::sensu_user_permissions: 'sensu@/sensu'
 
 ### sensu specific settings
 sensu::client_ssl_cert_chain: '/etc/ssl/sensu/client/cert.pem'
