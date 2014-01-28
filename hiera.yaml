@@ -3,5 +3,5 @@
 :yaml:
   :datadir: /vagrant/hiera/
 :hierarchy:
-  - common
   - customize
+  - common

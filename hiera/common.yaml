@@ -14,3 +14,6 @@ rabbitmq::sensu_user_permissions: 'sensu@/sensu'
 sensu::client_ssl_cert_chain: '/etc/ssl/sensu/client/cert.pem'
 sensu::client_ssl_private_key: '/etc/ssl/sensu/client/key.pem'
 
+### dashboard settings
+sensu::dashboard_port: '8080'
+sensu::dashboard_password: 'secret'
