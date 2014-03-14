@@ -25,7 +25,7 @@ cd rabbitmq
 # just make sure that the master is not broken by mistake
 git checkout eb2ab911c7e4ca90d450baef4c8d578e24d2ba6f
 puppet module install arioch/redis
-puppet module install sensu-sensu
+puppet module install sensu-sensu --version v1.0.0
 
 # generate sensu SSL certificates
 cd /root

@@ -19,6 +19,8 @@ $ cd vagrant-sensu
 $ vagrant up
 </pre>
 
+`Note:` server IP is predefined with 10.170.0.2
+
 Start the services you need
 
 <pre>
@@ -29,7 +31,7 @@ $ service sensu-dashboard start
 $ service sensu-client start
 </pre>
 
-For example to access the sensu dashboard type http://localhost:8080/
+For example to access the sensu dashboard type http://VAGRANT_IMAGE_IP:8080/
 
 ## License
 

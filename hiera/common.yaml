@@ -4,16 +4,22 @@
 rabbitmq::ssl_cacert: '/etc/ssl/sensu/cacert.pem'
 rabbitmq::ssl_cert: '/etc/ssl/sensu/server/cert.pem'
 rabbitmq::ssl_key: '/etc/ssl/sensu/server/key.pem'
+rabbitmq::ssl_port: '5671'
 rabbitmq::sensu_user: 'sensu'
+
 # you should at least change that
 rabbitmq::sensu_pass: 'mypass'
 rabbitmq::sensu_vhost: '/sensu'
-rabbitmq::sensu_user_permissions: 'sensu@/sensu'
+rabbitmq::sensu_user_permissions: '%{hiera("rabbitmq::sensu_user")}@%{hiera("rabbitmq::sensu_vhost")}'
 
 ### sensu specific settings
 sensu::client_ssl_cert_chain: '/etc/ssl/sensu/client/cert.pem'
 sensu::client_ssl_private_key: '/etc/ssl/sensu/client/key.pem'
 
 ### dashboard settings
+sensu::dashboard: true
 sensu::dashboard_port: '8080'
 sensu::dashboard_password: 'secret'
+
+### api settings
+sensu::api: true
