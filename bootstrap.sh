@@ -13,21 +13,28 @@ fi
 apt-get update
 apt-get -y install puppet
 apt-get -y install git
+apt-get -y install rubygems
 
-puppet module install puppetlabs-stdlib
-puppet module install puppetlabs-rabbitmq
-# now some dirty work to get the last version from github
-# due to ssl_verify parameter
-cd /etc/puppet/modules
-rm -rf rabbitmq
-git clone https://github.com/puppetlabs/puppetlabs-rabbitmq.git rabbitmq
-cd rabbitmq
-# just make sure that the master is not broken by mistake
-git checkout eb2ab911c7e4ca90d450baef4c8d578e24d2ba6f
-puppet module install arioch/redis
-puppet module install sensu-sensu --version v1.0.0
+gem install librarian-puppet
+cd /etc/puppet
+rm -rf modules/
 
-# generate sensu SSL certificates
+LIBRARIAN_FILE=$( cat << EOF
+forge "http://forge.puppetlabs.com"
+
+mod "arioch/redis"
+mod "sensu/sensu", "1.0.0"
+
+mod "rabbitmq",
+  :git => "https://github.com/puppetlabs/puppetlabs-rabbitmq.git",
+  :ref => "eb2ab911c7e4ca90d450baef4c8d578e24d2ba6f"
+EOF
+)
+
+echo "${LIBRARIAN_FILE}" > /etc/puppet/Puppetfile
+librarian-puppet install
+
+# generate sensu SSL certificates to the puppet manifest can use them
 cd /root
 wget http://sensuapp.org/docs/0.12/tools/ssl_certs.tar
 tar -xvf ssl_certs.tar
