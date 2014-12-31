@@ -89,7 +89,12 @@ class { '::sensu':
   rabbitmq_password        => hiera('rabbitmq::sensu_pass','mypsas'),
   rabbitmq_port            => hiera('rabbitmq::ssl_port', '5671'),
   server                   => true,
+  api                      => true,
   rabbitmq_ssl_cert_chain  => hiera('sensu::client_ssl_cert_chain','/etc/ssl/sensu/client/cert.pem'),
   rabbitmq_ssl_private_key => hiera('sensu::client_ssl_private_key','/etc/ssl/sensu/client/key.pem'),
   require                  => [ Class['::redis'], Class['::rabbitmq'] ],
+} ->
+
+class {'::uchiwa':
+  install_repo => false,
 }

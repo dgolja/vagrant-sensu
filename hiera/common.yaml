@@ -15,11 +15,3 @@ rabbitmq::sensu_user_permissions: '%{hiera("rabbitmq::sensu_user")}@%{hiera("rab
 ### sensu specific settings
 sensu::client_ssl_cert_chain: '/etc/ssl/sensu/client/cert.pem'
 sensu::client_ssl_private_key: '/etc/ssl/sensu/client/key.pem'
-
-### dashboard settings
-sensu::dashboard: true
-sensu::dashboard_port: '8080'
-sensu::dashboard_password: 'secret'
-
-### api settings
-sensu::api: true
