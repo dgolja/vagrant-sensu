@@ -31,7 +31,7 @@ $ service sensu-dashboard start
 $ service sensu-client start
 </pre>
 
-For example to access the sensu dashboard type http://VAGRANT_IMAGE_IP:8080/
+For example to access the sensu dashboard type http://VAGRANT_IMAGE_IP:3000/
 
 ## License
 
