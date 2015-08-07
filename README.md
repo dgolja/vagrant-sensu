@@ -26,7 +26,7 @@ Start the services you need
 <pre>
 $ vagrant ssh
 $ service sensu-server start
-$ servic sensu-api start
+$ service sensu-api start
 $ service sensu-dashboard start
 $ service sensu-client start
 </pre>
