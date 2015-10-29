@@ -6,15 +6,14 @@ if which puppet > /dev/null 2>&1; then
   echo 'Puppet Installed.'
 else
   echo 'Installing Puppet Client.'
-  wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb
-  dpkg -i puppetlabs-release-precise.deb
+  wget http://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+  dpkg -i puppetlabs-release-trusty.deb
 fi
 
 apt-get update
 apt-get -y install puppet
 apt-get -y install git
 apt-get -y install ruby-dev
-apt-get -y install rubygems
 
 gem install --no-ri --no-rdoc r10k
 cd /etc/puppet
@@ -23,15 +22,15 @@ rm -rf modules/
 LIBRARIAN_FILE=$( cat << EOF
 forge "http://forge.puppetlabs.com"
 
-mod "arioch/redis", "1.0.1"
-mod "sensu/sensu", "1.3.1"
+mod "arioch/redis", "1.3.1"
+mod "sensu/sensu", "2.0.0"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/apt"
 mod "maestrodev/wget"
 mod "garethr/erlang", "0.3.0"
-mod "puppetlabs/rabbitmq", "4.1.0"
+mod "puppetlabs/rabbitmq", "5.3.1"
 mod "nanliu/staging"
-mod "yelp/uchiwa", :git => "https://github.com/Yelp/puppet-uchiwa.git"
+mod "yelp/uchiwa", "0.3.0"
 
 EOF
 )
