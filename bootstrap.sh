@@ -22,7 +22,7 @@ rm -rf modules/
 LIBRARIAN_FILE=$( cat << EOF
 forge "http://forge.puppetlabs.com"
 
-mod "arioch/redis", "1.3.1"
+mod "arioch/redis", "1.1.3"
 mod "sensu/sensu", "2.0.0"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/apt"
