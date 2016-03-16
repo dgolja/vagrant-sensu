@@ -16,7 +16,7 @@ class { '::rabbitmq':
   ssl_cacert               => hiera('rabbitmq::ssl_cacert','/etc/ssl/sensu/cacert.pem'),
   ssl_cert                 => hiera('rabbitmq::ssl_cert','/etc/ssl/sensu/server/cert.pem'),
   ssl_key                  => hiera('rabbitmq::ssl_key','/etc/ssl/sensu/server/key.pem'),
-  ssl_management_port      => hiera('rabbitmq::ssl_port','5671'),
+  ssl_management_port      => hiera('rabbitmq::ssl_management_port','15671'),
   ssl_verify               => 'verify_peer',
   ssl_fail_if_no_peer_cert => true,
 }
