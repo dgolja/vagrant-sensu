@@ -5,6 +5,7 @@ rabbitmq::ssl_cacert: '/etc/ssl/sensu/cacert.pem'
 rabbitmq::ssl_cert: '/etc/ssl/sensu/server/cert.pem'
 rabbitmq::ssl_key: '/etc/ssl/sensu/server/key.pem'
 rabbitmq::ssl_port: '5671'
+rabbitmq::ssl_management_port: '15671'
 rabbitmq::sensu_user: 'sensu'
 
 # you should at least change that
