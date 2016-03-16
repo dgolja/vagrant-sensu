@@ -6,7 +6,7 @@
 # get hiera variables for title resource
 
 $rabbitmq_sensu_user = hiera('rabbitmq::sensu_user','sensu')
-$rabbitmq_sensu_vhost = hiera('rabbitmq::sensu_vhost','/sensu')
+$rabbitmq_sensu_vhost = hiera('rabbitmq::sensu_vhost','sensu')
 $rabbitmq_sensu_permissions = hiera('rabbitmq::sensu_user_permissions','sensu@/sensu')
 
 class { '::rabbitmq':
