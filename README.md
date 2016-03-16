@@ -13,7 +13,7 @@ This vagrant configuration will boot up a working [Sensu](https://github.com/sen
 ## Installation
 
 Boot image
-<pre> 
+<pre>
 $ git clone https://github.com/n1tr0g/vagrant-sensu.git
 $ cd vagrant-sensu
 $ vagrant up
@@ -27,11 +27,12 @@ Start the services you need
 $ vagrant ssh
 $ service sensu-server start
 $ service sensu-api start
-$ service sensu-dashboard start
 $ service sensu-client start
+$ service uchiwa start
 </pre>
 
-For example to access the sensu dashboard type http://VAGRANT_IMAGE_IP:3000/
+For example to access the Uchiwa dashboard open
+http://VAGRANT_IMAGE_IP:3000/ in a browser.
 
 ## License
 

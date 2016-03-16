@@ -97,4 +97,7 @@ class { '::sensu':
 
 class {'::uchiwa':
   install_repo => false,
+  sensu_api_endpoints => [{
+    host => '127.0.0.1',
+  }]
 }
