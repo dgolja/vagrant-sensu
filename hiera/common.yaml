@@ -10,7 +10,7 @@ rabbitmq::sensu_user: 'sensu'
 
 # you should at least change that
 rabbitmq::sensu_pass: 'mypass'
-rabbitmq::sensu_vhost: '/sensu'
+rabbitmq::sensu_vhost: 'sensu'
 rabbitmq::sensu_user_permissions: '%{hiera("rabbitmq::sensu_user")}@%{hiera("rabbitmq::sensu_vhost")}'
 
 ### sensu specific settings
