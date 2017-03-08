@@ -43,7 +43,7 @@ sed -i '/^templatedir/d' /etc/puppet/puppet.conf
 
 # generate sensu SSL certificates to the puppet manifest can use them
 cd /root
-wget http://sensuapp.org/docs/0.20/tools/ssl_certs.tar
+wget https://sensuapp.org/docs/latest/tools/ssl_certs.tar
 tar -xvf ssl_certs.tar
 cd ssl_certs
 ./ssl_certs.sh generate
