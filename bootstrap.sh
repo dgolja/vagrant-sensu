@@ -23,12 +23,12 @@ LIBRARIAN_FILE=$( cat << EOF
 forge "http://forge.puppetlabs.com"
 
 mod "arioch/redis", "1.1.3"
-mod "sensu/sensu", "2.0.0"
+mod "sensu/sensu", "2.2.0"
 mod "puppetlabs/stdlib"
 mod "puppetlabs/apt"
 mod "maestrodev/wget"
 mod "garethr/erlang", "0.3.0"
-mod "puppetlabs/rabbitmq", "5.3.1"
+mod "puppetlabs/rabbitmq", "5.6.0"
 mod "nanliu/staging"
 mod "yelp/uchiwa", "0.3.0"
 
